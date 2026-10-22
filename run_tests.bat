@@ -12,6 +12,7 @@ if not exist "%PYTHON_EXE%" (
 )
 
 if /I "%~1"=="install" (
+    if exist ".venv\Lib\site-packages\pytest" exit /b 0
     "%PYTHON_EXE%" -m pip install --target .venv\Lib\site-packages -r requirements.txt
     exit /b %ERRORLEVEL%
 )
