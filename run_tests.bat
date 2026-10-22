@@ -1,9 +1,9 @@
 @echo off
 setlocal
 
-rem Prefer a normal Python installation. The fallback supports this laptop's
-rem Python 3.13 runtime bundled with pgAdmin when python is not on PATH.
-set "PYTHON_EXE=C:\Program Files\PostgreSQL\18\pgAdmin 4\python\python.exe"
+rem Use the standard Python installation available on this laptop. The
+rem pgAdmin-bundled Python is deliberately not used because it is isolated.
+set "PYTHON_EXE=C:\Users\Vedantnew\AppData\Local\Programs\Python\Python313\python.exe"
 if not exist "%PYTHON_EXE%" set "PYTHON_EXE=python"
 
 if not exist "%PYTHON_EXE%" (
